@@ -34,9 +34,8 @@ public class PolicyHandler {
         System.out.println(
             "\n\n##### listener UpdateStatus : " + outOfStock + "\n\n"
         );
-
         // Sample Logic //
-        Order.updateStatus(event);
+
     }
 }
 //>>> Clean Arch / Inbound Adaptor
