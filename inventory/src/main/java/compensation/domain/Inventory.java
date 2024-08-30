@@ -26,11 +26,11 @@ public class Inventory {
 
     @PostUpdate
     public void onPostUpdate() {
-        OutOfStock outOfStock = new OutOfStock(this);
-        outOfStock.publishAfterCommit();
-
         StockDecreased stockDecreased = new StockDecreased(this);
         stockDecreased.publishAfterCommit();
+
+        OutOfStock outOfStock = new OutOfStock(this);
+        outOfStock.publishAfterCommit();
     }
 
     public static InventoryRepository repository() {

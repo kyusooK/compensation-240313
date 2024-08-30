@@ -38,11 +38,6 @@ public class Order {
 
         OrderCancelled orderCancelled = new OrderCancelled(this);
         orderCancelled.publishAfterCommit();
-        // Get request from Order
-        //compensation.external.Order order =
-        //    Application.applicationContext.getBean(compensation.external.OrderService.class)
-        //    .getOrder(/** mapping value needed */);
-
     }
 
     @PreRemove
@@ -54,30 +49,5 @@ public class Order {
         );
         return orderRepository;
     }
-
-    //<<< Clean Arch / Port Method
-    public static void updateStatus(OutOfStock outOfStock) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
-        Order order = new Order();
-        repository().save(order);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(outOfStock.get???()).ifPresent(order->{
-            
-            order // do something
-            repository().save(order);
-
-
-         });
-        */
-
-    }
-    //>>> Clean Arch / Port Method
-
 }
 //>>> DDD / Aggregate Root
